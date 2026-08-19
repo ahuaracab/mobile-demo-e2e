@@ -9,6 +9,9 @@
     "react-native": "0.86.2"
   },
   "devDependencies": {
+    "@react-native-community/cli": "latest",
+    "@react-native-community/cli-platform-android": "latest",
+    "@react-native/metro-config": "latest",
     "@types/react": "~19.2.2",
     "typescript": "~6.0.3"
   },
