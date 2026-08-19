@@ -2,9 +2,9 @@ name: Trigger Mobile E2E Tests in QA
 
 on:
   push:
-    branches: [main, develop]
+    branches: [master, main, develop]
   pull_request:
-    branches: [main]
+    branches: [master, main]
   workflow_dispatch:
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
           token: ${{ secrets.TOKEN_MOBILE }}
           repository: ahuaracab/agentic-qa-simpliroute
           event-type: mobile-e2e-trigger
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "event": "${{ github.event_name }}"}'
+          client-payload: '{"ref": "${{ github.ref_name }}", "sha": "${{ github.sha }}", "event": "${{ github.event_name }}"}'
