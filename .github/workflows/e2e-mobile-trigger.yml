@@ -1,0 +1,22 @@
+name: Trigger Mobile E2E Tests in QA
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  trigger-qa-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Trigger QA Mobile E2E Workflow
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.QA_REPO_TOKEN }}
+          repository: ahuaracab/agentic-qa-simpliroute
+          event-type: mobile-e2e-trigger
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "event": "${{ github.event_name }}"}'
