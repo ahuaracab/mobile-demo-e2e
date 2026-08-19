@@ -59,9 +59,7 @@ jobs:
         run: adb install -r android/app/build/outputs/apk/release/app-release.apk
 
       - name: Setup Maestro
-        uses: mobile-dev-inc/setup-maestro@v1
-        with:
-          version: 2.8.0
+        uses: remarkablemark/setup-maestro-cli@v1
 
       - name: Run E2E Tests
         run: maestro test .maestro/
