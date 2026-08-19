@@ -15,12 +15,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title} accessibilityLabel="main-title">Demo E2E Mobile</Text>
+      <Text style={styles.title} testID="main-title" accessibilityLabel="main-title">Demo E2E Mobile</Text>
 
       <View style={styles.section}>
         <Text style={styles.label}>Nombre:</Text>
         <TextInput
           style={styles.input}
+          testID="name-input"
           accessibilityLabel="name-input"
           placeholder="Escribi tu nombre"
           value={name}
@@ -28,22 +29,24 @@ export default function App() {
         />
         <TouchableOpacity
           style={styles.button}
+          testID="greet-button"
           accessibilityLabel="greet-button"
           onPress={handleGreet}
         >
           <Text style={styles.buttonText}>Saludar</Text>
         </TouchableOpacity>
         {greeting ? (
-          <Text style={styles.greeting} accessibilityLabel="greeting-text">{greeting}</Text>
+          <Text style={styles.greeting} testID="greeting-text" accessibilityLabel="greeting-text">{greeting}</Text>
         ) : null}
       </View>
 
       <View style={styles.section}>
         <Text style={styles.label}>Contador:</Text>
-        <Text style={styles.counter} accessibilityLabel="counter-value">{counter}</Text>
+        <Text style={styles.counter} testID="counter-value" accessibilityLabel="counter-value">{counter}</Text>
         <View style={styles.counterRow}>
           <TouchableOpacity
             style={styles.button}
+            testID="decrement-button"
             accessibilityLabel="decrement-button"
             onPress={() => setCounter(c => c - 1)}
           >
@@ -51,6 +54,7 @@ export default function App() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
+            testID="increment-button"
             accessibilityLabel="increment-button"
             onPress={() => setCounter(c => c + 1)}
           >
