@@ -16,7 +16,7 @@ jobs:
       - name: Trigger QA Mobile E2E Workflow
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.QA_REPO_TOKEN }}
+          token: ${{ secrets.TOKEN_MOBILE }}
           repository: ahuaracab/agentic-qa-simpliroute
           event-type: mobile-e2e-trigger
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "event": "${{ github.event_name }}"}'
